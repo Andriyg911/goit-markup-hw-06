@@ -29,11 +29,16 @@
         </ul>
         </nav>
         <address class="address">
-        <ul class="nav-item-adress">
+        <ul class="nav-item-adres">
           <li><a href="mailto:info@devstudio.com" class="item-address-link">info@devstudio.com</a></li>
           <li><a href="tel:+110001111111" class="item-address-link">+11 (000) 111-11-11</a></li>
         </ul> 
         </address>
+        <button class="burger-btn" type="button">
+          <svg class="burger-icon" width="24" height="24">
+            <use href="./images/icons.svg#menu"></use>
+          </svg>
+        </button>
         <!-- is-open -->
         <div class="mobile-menu ">
           <div class="container mobile-menu-container">
@@ -85,25 +90,21 @@
             </ul>
           </div>
         </div>
-        <button class="button-menu" type="button">
-          <svg class="button-menu-icon" width="24" height="24">
-            <use href="./images/icons.svg#menu"></use>
-          </svg>
-        </button>
+        
         <!-- #region header -->
-    </div>
+     </div>
   </header>
   <main>
     <section class="effective-solutions">
-      <div class="container hidden">
+      <div class="container">
         <h1 class="effective-solutions-h">Effective Solutions
           for Your Business</h1>
-        <button class="effective-solutions-button " type="button">Order Service</button>
+        <button class="effective-solutions-button" type="button">Order Service</button>
       </div>
     </section>
-    <section class="section-one"  >
+    <section class="section-one" >
     <div class="container">
-      <h2 class="visually-hidden">Advantages</h2>
+      <h2 class="visually hidden">Advantages</h2>
       <ul class="section-one-list">
         <li class="section-one-list-item">
           <div class="svg">
@@ -152,14 +153,19 @@
         </li>
       </ul>
     </div>
+    </section>
       <!-- #endregion header -->
       <!-- #region team -->
-    </section>
-    <section class="team" hidden>
+      <section class="team">
       <div class="container">
       <h2 class="team-title">Our Team</h2>
       <ul class="team-list">
-        <li class="team-list-item"><img src="./images/markguerrero.jpg" width="264" height="260" alt="Mark-Guerrero">
+        <li class="team-list-item">
+          <picture>
+            <source srcset="./images/mark-mobi@2x.jpg" media="(min-resolution: 192dpi)">
+            <source srcset="./images/mark-mobi.jpg" media="(max-resolution: 191dpi)">
+            <img src="./images/mark-mobi.jpg" width="264" height="260" alt="Mark-Guerrero">
+          </picture>
         <div class="namepost">
             <h3 class="team-item-title">Mark Guerrero</h3>
             <p class="team-post">Product Designer</p>
@@ -195,7 +201,12 @@
                   </ul>
             </div>
         </li>
-        <li class="team-list-item"><img src="./images/tomford.jpg" width="264" height="260" alt="Tom-Ford">
+        <li class="team-list-item">
+        <picture>
+          <source srcset="./images/tom-mobi@2x.jpg" media="(min-resolution: 192dpi)">
+          <source srcset="./images/tom-mobi.jpg" media="(max-resolution: 191dpi)">
+          <img src="./images/tom-mobi.jpg" width="264" height="260" alt="Tom-Ford">
+        </picture>
         <div class="namepost">
             <h3 class="team-item-title">Tom Ford</h3>
             <p class="team-post">Frontend Developer</p>
@@ -231,7 +242,12 @@
             </ul>
         </div>
         </li>
-        <li class="team-list-item"><img src="./images/camilagarcia.jpg" width="264" height="260" alt="Camila-Garcia">
+        <li class="team-list-item">
+          <picture>
+            <source srcset="./images/camila-mobi@2x.jpg" media="(min-resolution: 192dpi)">
+            <source srcset="./images/camila-mobi.jpg" media="(max-resolution: 191dpi)">
+            <img src="./images/camila-mobi.jpg" width="264" height="260" alt="Camila-Garcia">
+          </picture>
         <div class="namepost">
             <h3 class="team-item-title">Camila Garcia</h3>
             <p class="team-post">Marketing</p>
@@ -267,7 +283,12 @@
             </ul>
         </div>
         </li>
-        <li class="team-list-item"><img src="./images/danielwilson.jpg" width="264" height="260" alt="Daniel-Wilson">
+        <li class="team-list-item">
+          <picture>
+            <source srcset="./images/daniel-mobi@2x.jpg" media="(min-resolution: 192dpi)">
+            <source srcset="./images/daniel-mobi.jpg" media="(max-resolution: 191dpi)">
+            <img src="./images/daniel-mobi.jpg" width="264" height="260" alt="Daniel-Wilson">
+          </picture>
         <div class="namepost">
             <h3 class="team-item-title">Daniel Wilson</h3>
             <p class="team-post">UI Designer</p>
@@ -305,16 +326,28 @@
         </li>
       </ul>
       </div>
-    </section>
+    </section> 
     <!-- @endregion team -->
       <!--Our Portfolio-->
-    <section class="portfolio" hidden>
+    <section class="portfolio">
       <div class="container">
         <h2 class="portfolio-title">Our Portfolio</h2>
       <ul class="portfolio-list">
         <li class="portfolio-list-item">
           <div class="tumba">
-            <img src="./images/bankingapp.jpg" width="360" alt="Banking-App">
+            <picture>
+              <!-- Для телефонів (ширина до 600px) -->
+              <source media="(max-width: 600px)" srcset="./images/bank-mobi.jpg 1x, ./images/bank-mobi@2x.jpg 2x">
+            
+              <!-- Для планшетів (від 601px до 1024px) -->
+              <source media="(min-width: 601px) and (max-width: 1024px)" srcset="./images/bank-tablet.jpg 1x, ./images/bank-tablet@2x.jpg 2x">
+            
+              <!-- Для ПК (ширина від 1025px і більше) -->
+              <source media="(min-width: 1025px)" srcset="./images/bank-pc.jpg 1x, ./images/bank-pc@2x.jpg 2x">
+            
+              <!-- Резервний варіант (fallback) -->
+              <img src="./images/bank-mobi.jpg" width="360" alt="Banking App">
+            </picture>
             <p class="overlov">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
               Fruit Ecommerce App ·
               Cloud Storage App</p>
@@ -327,7 +360,13 @@
         </li>
         <li class="portfolio-list-item">
           <div class="tumba">
-          <img src="./images/cashlesspayment.jpg" width="360" alt="Cashless-Payment">
+          <picture>
+            <source media="(max-width: 600px)" srcset="./images/terminal-mobi.jpg 1x, ./images/terminal-mobi@2x.jpg 2x">
+            <source media="(min-width: 601px) and (max-width: 1024px)"
+              srcset="./images/terminal-tablet.jpg 1x, ./images/terminal-tablet@2x.jpg 2x">
+            <source media="(min-width: 1025px)" srcset="./images/terminal-pc.jpg 1x, ./images/terminal-pc@2x.jpg 2x">
+            <img src="./images/terminal-mobi.jpg" width="360" alt="Cashless Payment">
+          </picture>
           <p class="overlov">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
             Fruit Ecommerce App ·
             Cloud Storage App</p>
@@ -339,7 +378,13 @@
         </li>
         <li class="portfolio-list-item">
           <div class="tumba">
-          <img src="./images/meditationapp.jpg" width="360" alt="Meditation-App">
+          <picture>
+            <source media="(max-width: 600px)" srcset="./images/program-mobi.jpg 1x, ./images/program-mobi@2x.jpg 2x">
+            <source media="(min-width: 601px) and (max-width: 1024px)"
+              srcset="./images/program-tablet.jpg 1x, ./images/program-tablet@2x.jpg 2x">
+            <source media="(min-width: 1025px)" srcset="./images/program-pc.jpg 1x, ./images/program-pc@2x.jpg 2x">
+            <img src="./images/program-mobi.jpg" width="360" alt="Meditation App">
+          </picture>
           <p class="overlov">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
             Fruit Ecommerce App ·
             Cloud Storage App</p>
@@ -351,7 +396,13 @@
         </li>
           <li class="portfolio-list-item">
             <div class="tumba">
-          <img src="./images/taxiservice.jpg" width="360" alt="Taxi-Service">
+          <picture>
+            <source media="(max-width: 600px)" srcset="./images/car-mobi.jpg 1x, ./images/car-mobi@2x.jpg 2x">
+            <source media="(min-width: 601px) and (max-width: 1024px)"
+              srcset="./images/car-tablet.jpg 1x, ./images/car-tablet@2x.jpg 2x">
+            <source media="(min-width: 1025px)" srcset="./images/car-pc.jpg 1x, ./images/car-pc@2x.jpg 2x">
+            <img src="./images/car-mobi.jpg" width="360" alt="Taxi Service">
+          </picture>
           <p class="overlov">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
             Fruit Ecommerce App ·
             Cloud Storage App</p>
@@ -363,7 +414,13 @@
         </li>
         <li class="portfolio-list-item">
           <div class="tumba">
-          <img src="./images/screeniiiustrations.jpg" width="360" alt="Screen-Illustrations">
+          <picture>
+            <source media="(max-width: 600px)" srcset="./images/tel-mobi.jpg 1x, ./images/tel-mobi@2x.jpg 2x">
+            <source media="(min-width: 601px) and (max-width: 1024px)"
+              srcset="./images/tel-tablet.jpg 1x, ./images/tel-tablet@2x.jpg 2x">
+            <source media="(min-width: 1025px)" srcset="./images/tel-pc.jpg 1x, ./images/tel-pc@2x.jpg 2x">
+            <img src="./images/tel-mobi.jpg" width="360" alt="Screen Illustrations">
+          </picture>
           <p class="overlov">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
             Fruit Ecommerce App ·
             Cloud Storage App</p>
@@ -375,7 +432,13 @@
         </li>
         <li class="portfolio-list-item">
           <div class="tumba">
-          <img src="./images/onlinecourses.jpg" width="360" alt="Online-Courses">
+          <picture>
+            <source media="(max-width: 600px)" srcset="./images/wumen-mobi.jpg 1x, ./images/wumen-mobi@2x.jpg 2x">
+            <source media="(min-width: 601px) and (max-width: 1024px)"
+              srcset="./images/wumen-tablet.jpg 1x, ./images/wumen-tablet@2x.jpg 2x">
+            <source media="(min-width: 1025px)" srcset="./images/wumen-pc.jpg 1x, ./images/wumen-pc@2x.jpg 2x">
+            <img src="./images/wumen-mobi.jpg" width="360" alt="Online Courses">
+          </picture>
           <p class="overlov">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic
             Fruit Ecommerce App ·
             Cloud Storage App</p>
@@ -389,8 +452,8 @@
       </div>
     </section>
   </main>
-  <footer class="footer" hidden>
-    <div class="footer-ziro">
+   <footer class="footer">
+    <div class="container footer-ziro">
         
           <div class="footer-logo-div">
             <a class="logo-footer" href="./index.html">WEB<span
@@ -444,9 +507,8 @@
   </footer>
   <!-- #region backdrop -->
   <!-- is-open -->
-<div class="backdrop is-open hidden ">
-  <div class="modal" hidden>
-    <button class="close-bth" type="button">
+  <div class="backdrop">
+  <div class="modal"><button class="close-bth" type="button">
     <svg class="close-bth-icon" width="8" height="8">
       <use href="./images/icons.svg#close"></use>
     </svg>
@@ -487,8 +549,7 @@
     <div class="modal-form-con-checkbox">
       <input type="checkbox" value="true" name="user-privacy" class="checkbox visually-hidden"
       id="user-privacy">
-      <label class="text-label-check" for="user-privacy"><span class="checkbpx">
-        <svg class="cuatom-checkbox" width="10" height="8">
+      <label class="text-label-check" for="user-privacy"><span class="checkbpx"><svg class="cuatom-checkbox" width="10" height="8">
         <use href="./images/icons.svg#Vector"></use>
       </svg></span> I accept the terms and conditions of the <a class="privacy-policy" href="#">Privacy Policy</a></label>
       
